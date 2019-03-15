@@ -1,14 +1,10 @@
-import * as kebabCase from 'lodash/fp/kebabCase';
 import { MyApp } from './app';
 
+const elements = [
+    MyApp,
+    // Add your STATIC elements here
+];
 
-// add custom elements here
-const elements = {
-    MyApp
-};
-
-// register all components as kebab case
-Object.keys(elements)
-    .forEach(key => {
-        customElements.define(kebabCase(key), elements[key])
-    });
+for (const el of elements) {
+    customElements.define(el.is, el);
+}
