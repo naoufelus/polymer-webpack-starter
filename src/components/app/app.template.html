@@ -5,18 +5,23 @@
   <!-- <iron-icon icon="search"></iron-icon> -->
   <iron-icon icon="inline:twitter"></iron-icon>
   <iron-icon icon="inline:dele3" size="512"></iron-icon>
-  <paper-checkbox class="red" toggles noink checked={{pie}}>
-    <span class="title">Checkbox</span>
-    <span class="subtitle">I like pie.</span>
-  </paper-checkbox>
-  <paper-button>
-    <iron-icon icon="inline:arrow-back"></iron-icon>&nbsp;
-    Back
-  </paper-button>
-  <paper-checkbox class="green" id="omgpie">I like pie.</paper-checkbox>
+  <div>
+    <paper-checkbox class="red" toggles noink checked={{pie}}>
+      <span class="title">Checkbox</span>
+      <span class="subtitle">I like pie.</span>
+    </paper-checkbox>
+  </div>
+  <div>
+    <paper-button>
+      <iron-icon icon="inline:arrow-back"></iron-icon>&nbsp;
+      Back
+    </paper-button>
+  </div>
+  <paper-checkbox class="paper-checkbox green" id="omgpie">I like pie.</paper-checkbox>
   <template is="dom-if" if=[[pie]]>
     <lazy-element>
       <p>lazy loading...</p>
     </lazy-element>
   </template>
+  <binding-element dynamic-path="dsdsdd"></binding-element>
 </div>

@@ -7,6 +7,7 @@ import '@polymer/paper-checkbox/paper-checkbox';
 
 import '../shared-styles';
 import '../icons';
+import './binding-element';
 
 import view from './app.template.html';
 import style from './app.style.scss';
@@ -17,7 +18,7 @@ export class MyApp extends PolymerElement {
   @property({ type: Boolean }) loadComplete: boolean = true; */
 
   message: string;
-  // pie: boolean = true;
+  pie = true;
   loadComplete = true;
 
   static get template() {
@@ -34,11 +35,11 @@ export class MyApp extends PolymerElement {
         type: String,
         value: ''
       },
-      /*  pie: {
+      pie: {
          type: Boolean,
          value: false,
          observer: 'togglePie'
-       }, */
+       },
       loadComplete: {
         type: Boolean,
         value: false
@@ -52,16 +53,16 @@ export class MyApp extends PolymerElement {
     this.message = 'Hello World! I\'m a Polymer element :)';
   }
 
-  /* togglePie() {
+  togglePie() {
     if (this.pie && !this.loadComplete) {
       // See https://developers.google.com/web/updates/2017/11/dynamic-import
-      import('./lazy-element').then((LazyElement) => {
-        console.log("LazyElement loaded");
+      import('./lazy-element').then((le) => {
+        console.log("LazyElement loaded", le);
       }).catch((reason) => {
         console.log("LazyElement failed to load", reason);
       });
       this.loadComplete = true;
     }
-  } */
+  }
 
 }

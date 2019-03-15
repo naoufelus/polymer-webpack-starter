@@ -10,7 +10,7 @@
 
 // Import statements in Polymer 3.0 can now use package names.
 // polymer-element.js now exports PolymerElement instead of Element,
-// so no need to change the symbol. 
+// so no need to change the symbol.
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 
 export class LazyElement extends PolymerElement {
@@ -20,5 +20,9 @@ export class LazyElement extends PolymerElement {
         return html`
       <p>You like pie.</p>
     `;
+    }
+
+    static get is() {
+      return 'lazy-element';
     }
 }
